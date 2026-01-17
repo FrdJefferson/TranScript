@@ -105,3 +105,15 @@ EXP->>UI: exportLink
 - `docs/security.md`
 - `docs/infra.md`
 - `docs/testing.md`
+- `docs/runbook.md`
+- `docs/architecture-decisions.md`
+- `docs/checklist.md`
+- `docs/roadmap.md`
+- `docs/scope.md`
+- `docs/ops-metrics.md`
+- `docs/data-retention.md`
+- `docs/onboarding.md`
+- `docs/config.md`
+- `docs/deployment.md`
+- `docs/glossary.md`
+- `docs/backlog.md`
