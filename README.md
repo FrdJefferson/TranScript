@@ -3,12 +3,17 @@
 Сервис превращает длинные YouTube-видео в структурированные текстовые гайды с шагами и иллюстрациями. Гайды можно редактировать и экспортировать в популярные форматы.
 
 ## Содержание
+- [Быстрый старт](#быстрый-старт)
 - [Цели MVP](#цели-mvp)
 - [Архитектура (верхнеуровнево)](#архитектура-верхнеуровнево)
 - [Пайплайн обработки](#пайплайн-обработки)
 - [Модель данных (сокращенно)](#модель-данных-сокращенно)
 - [Риски](#риски)
 - [Документация](#документация)
+
+## Быстрый старт
+- См. [Onboarding](docs/onboarding.md) и [Configuration](docs/config.md).
+- Локальные зависимости и запуск: [Infrastructure](docs/infra.md).
 
 ## Цели MVP
 - URL YouTube → готовый гайд.
@@ -103,6 +108,7 @@ EXP->>UI: exportLink
 
 ### Архитектура и данные
 - [Architecture](docs/architecture.md)
+- [Tech Stack](docs/tech-stack.md)
 - [Data Model](docs/data-model.md)
 - [Pipeline](docs/pipeline.md)
 - [API](docs/api.md)
@@ -126,3 +132,4 @@ EXP->>UI: exportLink
 - [Testing](docs/testing.md)
 - [Checklist](docs/checklist.md)
 - [Onboarding](docs/onboarding.md)
+- [Contributing](docs/contributing.md)

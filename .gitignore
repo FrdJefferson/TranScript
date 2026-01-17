@@ -1,0 +1,21 @@
+# Node / JS
+node_modules/
+dist/
+build/
+coverage/
+
+# Frameworks
+.next/
+.vite/
+.turbo/
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
