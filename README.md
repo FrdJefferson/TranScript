@@ -1,18 +1,22 @@
-# Архитектура и план MVP (краткая версия)
+# TranScript — Архитектура и план MVP
 
-## 1. Обзор продукта
+Сервис превращает длинные YouTube-видео в структурированные текстовые гайды с шагами и иллюстрациями. Гайды можно редактировать и экспортировать в популярные форматы.
 
-Сервис превращает длинные YouTube-видео в структурированные текстовые гайды с шагами и иллюстрациями. Гайд можно редактировать и экспортировать в популярные форматы.
+## Содержание
+- [Цели MVP](#цели-mvp)
+- [Архитектура (верхнеуровнево)](#архитектура-верхнеуровнево)
+- [Пайплайн обработки](#пайплайн-обработки)
+- [Модель данных (сокращенно)](#модель-данных-сокращенно)
+- [Риски](#риски)
+- [Документация](#документация)
 
-## 2. Цели MVP
-
+## Цели MVP
 - URL YouTube → готовый гайд.
 - Редактирование шагов и иллюстраций.
 - Экспорт в Markdown и PDF.
 - Один язык на старте (уточняется).
 
-## 3. Архитектура (верхнеуровнево)
-
+## Архитектура (верхнеуровнево)
 - WebApp (SPA): импорт, редактор гайда, экспорт.
 - Backend API: оркестрация и хранение.
 - Worker: фоновые задачи (ASR, сегментация, кадры).
@@ -37,8 +41,7 @@ ui --> export[ExportService]
 export --> store
 ```
 
-## 4. Пайплайн обработки
-
+## Пайплайн обработки
 1. Ingest: загрузка видео/аудио.
 2. ASR: транскрипт с таймкодами (Whisper/Vosk локально или внешний API).
 3. Segment: логические фрагменты.
@@ -72,8 +75,7 @@ API->>EXP: generateExport
 EXP->>UI: exportLink
 ```
 
-## 5. Модель данных (сокращенно)
-
+## Модель данных (сокращенно)
 - User: id, role
 - VideoSource: url, duration, status, provider
 - Transcript: language, segments (text + timecodes)
@@ -84,36 +86,43 @@ EXP->>UI: exportLink
 - GuideAccess: userId, role
 - ShareLink: token, expiresAt
 
-## 6. Риски
-
+## Риски
 - Стоимость ASR/LLM → лимит длительности на MVP.
 - Права на контент YouTube → соблюдение ToS.
 - Качество сегментации → требуется ручная правка.
 - Локальные модели требуют ресурсов (CPU/GPU, RAM, диски моделей).
 - Ретенция данных влияет на стоимость хранения и юридические риски.
 
-## 7. Связанные документы
+## Документация
 
-- `docs/overview.md`
-- `docs/architecture.md`
-- `docs/data-model.md`
-- `docs/pipeline.md`
-- `docs/api.md`
-- `docs/ui-flow.md`
-- `docs/plan.md`
-- `docs/risks.md`
-- `docs/security.md`
-- `docs/infra.md`
-- `docs/testing.md`
-- `docs/runbook.md`
-- `docs/architecture-decisions.md`
-- `docs/checklist.md`
-- `docs/roadmap.md`
-- `docs/scope.md`
-- `docs/ops-metrics.md`
-- `docs/data-retention.md`
-- `docs/onboarding.md`
-- `docs/config.md`
-- `docs/deployment.md`
-- `docs/glossary.md`
-- `docs/backlog.md`
+### Продукт и требования
+- [Overview](docs/overview.md)
+- [Scope](docs/scope.md)
+- [Roadmap](docs/roadmap.md)
+- [Backlog](docs/backlog.md)
+
+### Архитектура и данные
+- [Architecture](docs/architecture.md)
+- [Data Model](docs/data-model.md)
+- [Pipeline](docs/pipeline.md)
+- [API](docs/api.md)
+- [ADR](docs/architecture-decisions.md)
+- [Glossary](docs/glossary.md)
+
+### UX и контент
+- [UI Flow](docs/ui-flow.md)
+- [Plan](docs/plan.md)
+
+### Операции и безопасность
+- [Security](docs/security.md)
+- [Infrastructure](docs/infra.md)
+- [Deployment](docs/deployment.md)
+- [Configuration](docs/config.md)
+- [Runbook](docs/runbook.md)
+- [Ops Metrics](docs/ops-metrics.md)
+- [Data Retention](docs/data-retention.md)
+
+### QA и процессы
+- [Testing](docs/testing.md)
+- [Checklist](docs/checklist.md)
+- [Onboarding](docs/onboarding.md)
