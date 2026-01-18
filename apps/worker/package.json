@@ -1,0 +1,6 @@
+{
+  "name": "@transcript/worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Worker service for TranScript"
+}
